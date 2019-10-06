@@ -13,3 +13,10 @@ jmImpliesLeibniz JMrefl = Lrefl
 
 jmImpliesTypesEquality : {x : a} -> {y : b} -> (prf : JMEq x y) -> LEq a b
 jmImpliesTypesEquality JMrefl = Lrefl
+
+{-
+We obviously can derive Streicher's K given the above on John Major equality,
+but it's worth checking explicitly how hard is it to prove this.
+-}
+doIHaveK : {x : a} -> (prf : LEq x x) -> LEq prf Lrefl
+doIHaveK Lrefl = Lrefl
